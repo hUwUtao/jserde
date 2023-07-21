@@ -2,7 +2,11 @@
   "name": "jserde",
   "module": "index.ts",
   "type": "module",
-  "devDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "esbuild": "^0.18.15"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
@@ -11,10 +15,6 @@
     "mktest:browser": " bun esbuild --minify --bundle --outfile=test/min.js --sourcemap test.ts",
     "test:node": "node test/test.js",
     "test:bun": "bun test/test.js"
-  },
-  "dependencies": {
-    "@types/node": "^20.4.2",
-    "esbuild": "^0.18.15"
   },
   "description": "Bit-level serialization written in typescript",
   "version": "1.0.0",
