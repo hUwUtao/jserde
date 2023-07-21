@@ -8,10 +8,24 @@ Another `JWT` replacement?
 
 ## Known limitations
 
-Currently: 
+Currently:
+
 - You can't store negative, floats, just unsigned int
 
-## Detailed use
+## Now with helper module (deserialization below)
+
+```ts
+import { u, vstr, build } from "serdebin/helper";
+const uint8array = build(
+  u(8, 255),
+  false,
+  true,
+  vstr("Hello World!"),
+  vstr("Hello World!", 8)
+);
+```
+
+## Detailed use (old)
 
 - Serialization
 
@@ -24,7 +38,7 @@ import {
   extract_str,
   makeFixed,
   toui8a,
-} from "jserde";
+} from "serdebin";
 
 // example data lol
 const data = [
@@ -54,16 +68,16 @@ const funny = reader.b(),
   date = reader.u(42);
 ```
 
-## Strategies
+## Strategies (old)
 
 - Variable length string
 
 ```ts
 const words = "You know the rules, and so do I";
 [
-    ...makeFixed(extract_scalar(words.length), 24), // parse into 24bit string
-    ...extract_str(words) // and read it
-]
+  ...makeFixed(extract_scalar(words.length), 24), // parse into 24bit string
+  ...extract_str(words), // and read it
+];
 ```
 
 ```ts
@@ -75,7 +89,7 @@ const str = reader.s(reader.u(24));
 
 ## Benchmark???
 
-I found this interesting. 
+I found this interesting.
 
 ```
 bun's result:
@@ -102,6 +116,6 @@ so it must be `extract_*`'s fault, maybe?
 
 haha, enjoy!
 
-## 
+##
 
 This project was created using `bun init` in bun v0.6.14. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

@@ -17,7 +17,7 @@
     "test:bun": "bun test/test.js"
   },
   "description": "Bit-level serialization written in typescript",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "directories": {
     "test": "test"
