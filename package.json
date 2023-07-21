@@ -1,0 +1,19 @@
+{
+  "name": "jserde",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {},
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "mktest": "tsc test.ts -m commonjs --target esnext --sourceMap --outDir test",
+    "mktest:browser": " bun esbuild --minify --bundle --outfile=test/min.js --sourcemap test.ts",
+    "test:node": "node test/test.js",
+    "test:bun": "bun test/test.js"
+  },
+  "dependencies": {
+    "@types/node": "^20.4.2",
+    "esbuild": "^0.18.15"
+  }
+}
