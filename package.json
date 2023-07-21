@@ -15,5 +15,25 @@
   "dependencies": {
     "@types/node": "^20.4.2",
     "esbuild": "^0.18.15"
-  }
+  },
+  "description": "Bit-level serialization written in typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hUwUtao/jserde.git"
+  },
+  "keywords": [
+    "serialization",
+    "deserialization"
+  ],
+  "author": "hUwUtao",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/hUwUtao/jserde/issues"
+  },
+  "homepage": "https://github.com/hUwUtao/jserde#readme"
 }
