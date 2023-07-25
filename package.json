@@ -14,7 +14,8 @@
     "mktest": "tsc test.ts -m commonjs --target esnext --sourceMap --outDir test",
     "mktest:browser": " bun esbuild --minify --bundle --outfile=test/min.js --sourcemap test.ts",
     "test:node": "node test/test.js",
-    "test:bun": "bun test/test.js"
+    "test:bun": "bun test/test.js",
+    "freedive": "tsc index.ts helper.ts --sourceMap=true -d && npm publish"
   },
   "description": "Bit-level serialization written in typescript",
   "version": "1.2.0",
