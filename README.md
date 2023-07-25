@@ -21,7 +21,7 @@ const uint8array = build(
   false,
   true,
   vstr("Hello World!"),
-  vstr("Hello World!", 8)
+  vstr("Hello World!", 8),
 );
 ```
 

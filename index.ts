@@ -44,7 +44,8 @@ export function toui8a(str: string) {
   return Uint8Array.from(str.split("").map((x) => x.charCodeAt(0)));
 }
 
-export function decu8(ui: Uint8Array) {
+export function decu8(ui: Uint8Array): string {
+  // @ts-ignore
   return [...ui].map((v) => String.fromCharCode(v)).join("");
 }
 
@@ -58,11 +59,11 @@ export function compact_u(b: bit[]) {
       .map((b) =>
         String.fromCharCode(
           //@ts-ignore bithacks
-          b + 48
-        )
+          b + 48,
+        ),
       )
       .join(""),
-    2
+    2,
   );
 }
 

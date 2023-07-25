@@ -26,7 +26,7 @@ export function u(s: size, d: number): bit[] {
  * Build variable string. Optimized for long to very long string
  * @param str Data
  * @param fit "Counter" value datatype
- * @returns 
+ * @returns
  */
 export function vstr(str: string, fit: size = 32) {
   if (str.length * 8 > pow(2, fit))
@@ -35,7 +35,7 @@ export function vstr(str: string, fit: size = 32) {
 }
 
 /**
- * 
+ *
  * @param reader pass initialized `Deserialization`
  * @param fit "Counter" value datatype (must match with serializor)
  * @returns the string
@@ -46,7 +46,8 @@ export function rvstr(reader: Deserialization, fit: size) {
 
 export function build(...i: (bit | bit[])[]) {
   return i_build(
-    i.reduce((l: bit[], b) => [...l, ...(typeof b == "boolean" ? [b] : b)], [])
+    // @ts-ignore typefyck
+    i.reduce((l: bit[], b) => [...l, ...(typeof b == "boolean" ? [b] : b)], []),
   );
 }
 
